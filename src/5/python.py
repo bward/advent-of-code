@@ -2,17 +2,15 @@ puzzle_input = []
 with open('./input') as puzzle:
     puzzle_input = [int(line.rsplit()[0]) for line in puzzle]
 
-print(puzzle_input)
-
-def part1(jumps):
+def count_steps(offsets, offset_change):
     steps = 0
+    offsets = list(offsets)
     position = 0
-    while -1 < position and position < len(jumps):
-        instruction = jumps[position]
-        if instruction > 2: jumps[position] -= 1
-        else: jumps[position] += 1
+    while -1 < position and position < len(offsets):
+        instruction = offsets[position]
+        offsets[position] += offset_change(instruction)
         position += instruction
         steps += 1
     return steps
 
-print(part1(puzzle_input))
+print(count_steps(puzzle_input, lambda x: 1), count_steps(puzzle_input, lambda x: -1 if x > 2 else 1))
