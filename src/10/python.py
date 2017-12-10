@@ -27,5 +27,5 @@ def knot_hash(lengths):
     return ''.join(['{0:02x}'.format(d) for d in dense])
 
 
-sparse = sparse_hash([int(c) for c in lengths.split(',')], list(range(256)), 0, 0)
-print(sparse[0][0]*sparse[0][1], knot_hash(lengths))
+sparse, *_ = sparse_hash([int(c) for c in lengths.split(',')], list(range(256)), 0, 0)
+print(sparse[0]*sparse[0], knot_hash(lengths))
