@@ -9,7 +9,7 @@ def dist(x, y):
 with open('./input') as puzzle_input:
     steps = puzzle_input.read().split(',')
     counts = Counter(steps)
-    
+
     y = counts['n'] - counts['s']
     x = counts['ne'] - counts['sw']
 
@@ -18,7 +18,6 @@ with open('./input') as puzzle_input:
     y -= se
 
     print(dist(x, y))
-
 
 with open('./input') as puzzle_input:
     x = 0
