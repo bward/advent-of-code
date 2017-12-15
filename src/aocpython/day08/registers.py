@@ -1,6 +1,6 @@
 from collections import defaultdict
 
-with open('./input') as puzzle_input:
+with open('./data/08') as puzzle_input:
     instructions = [line.rsplit() for line in puzzle_input]
 
 registers = defaultdict(int)

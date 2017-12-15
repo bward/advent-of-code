@@ -1,5 +1,5 @@
 puzzle_input = []
-with open('./input') as puzzle:
+with open('./data/05') as puzzle:
     puzzle_input = [int(line.rsplit()[0]) for line in puzzle]
 
 def count_steps(offsets, offset_change):
@@ -13,4 +13,5 @@ def count_steps(offsets, offset_change):
         steps += 1
     return steps
 
-print(count_steps(puzzle_input, lambda x: 1), count_steps(puzzle_input, lambda x: -1 if x > 2 else 1))
+if __name__ == '__main__':
+    print(count_steps(puzzle_input, lambda x: 1), count_steps(puzzle_input, lambda x: -1 if x > 2 else 1))

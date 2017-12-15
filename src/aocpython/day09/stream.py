@@ -1,4 +1,4 @@
-with open('./input') as puzzle_input:
+with open('./data/09') as puzzle_input:
     stream = puzzle_input.read()
     garbage = False
     ignore = False

@@ -1,19 +1,16 @@
 programs = []
-with open('./input') as puzzle_input:
+with open('./data/07') as puzzle_input:
     lines = [line.rsplit() for line in puzzle_input]
     programs = [(line[0], int(line[1][1:-1]), [p.replace(',', '') for p in line[3:]]) for line in lines]
 
-def part1():
+def tree_root():
     current = programs[0][0]
     while True:
-        print('current:', current)
         under = [p for p in programs if len(p) > 2 and current in p[2]]
         print(under)
         if len(under) == 0:
-            print(current)
-            break
+            return current
         current = under[0][0]
-        print(current)
 
 def tree_weight(base):
     base_node = [p for p in programs if p[0]==base][0]

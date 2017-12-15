@@ -6,7 +6,7 @@ def dist(x, y):
     else:
         return max(abs(x), abs(y))
 
-with open('./input') as puzzle_input:
+with open('./data/11') as puzzle_input:
     steps = puzzle_input.read().split(',')
     counts = Counter(steps)
 
@@ -19,7 +19,7 @@ with open('./input') as puzzle_input:
 
     print(dist(x, y))
 
-with open('./input') as puzzle_input:
+with open('./data/11') as puzzle_input:
     x = 0
     y = 0
     max_dist = 0

@@ -1,8 +1,6 @@
 from functools import reduce
 from operator import xor
 
-lengths = '31,2,85,1,80,109,35,63,98,255,0,13,105,254,128,33'
-
 def sparse_hash(lengths, values, position, skip_size):
     for length in lengths:
         reverse = (values+values)[position:position+length][::-1]
@@ -27,5 +25,7 @@ def knot_hash(lengths):
     return ''.join(['{0:02x}'.format(d) for d in dense])
 
 
-sparse, *_ = sparse_hash([int(c) for c in lengths.split(',')], list(range(256)), 0, 0)
-print(sparse[0]*sparse[0], knot_hash(lengths))
+if __name__ == '__main__':
+    lengths = '31,2,85,1,80,109,35,63,98,255,0,13,105,254,128,33'
+    sparse, *_ = sparse_hash([int(c) for c in lengths.split(',')], list(range(256)), 0, 0)
+    print(sparse[0]*sparse[0], knot_hash(lengths))
