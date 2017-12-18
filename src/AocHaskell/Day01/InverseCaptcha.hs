@@ -6,6 +6,6 @@ inverseCaptcha input checkPosition = sum . map fst $ filter (\(x, i) -> x == (cy
     where digits = map digitToInt input
 
 main :: IO ()
-main = do   puzzleInput <- readFile "../data/01"
+main = do   puzzleInput <- readFile "./data/01"
             print $ inverseCaptcha puzzleInput succ
             print $ inverseCaptcha puzzleInput (\i -> i + div (length puzzleInput) 2)

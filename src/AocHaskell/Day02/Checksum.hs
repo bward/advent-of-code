@@ -11,6 +11,6 @@ evenlyDivisibleChecksum :: [[Int]] -> Int
 evenlyDivisibleChecksum = sum . map (\row -> head [x `div` y | x <- row, y <- row, x /= y, x `mod` y == 0]) 
 
 main :: IO()
-main = do   puzzleInput <- readFile "../../data/02"
+main = do   puzzleInput <- readFile "./data/02"
             print . maxMinChecksum $ readSpreadsheet puzzleInput
             print . evenlyDivisibleChecksum $ readSpreadsheet puzzleInput
